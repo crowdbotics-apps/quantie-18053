@@ -10,3 +10,15 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+
+
+class Daily_score(models.Model):
+    "Generated Model"
+    calories = models.BigIntegerField()
+    heart_points = models.BigIntegerField(null=True, blank=True,)
+    hydration = models.BigIntegerField(null=True, blank=True,)
+
+
+class Score(models.Model):
+    "Generated Model"
+    daily_score = models.BigIntegerField()
